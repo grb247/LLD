@@ -1,4 +1,4 @@
-// https://akhiilgupta.medium.com/create-complex-java-objects-using-fluent-builder-pattern-c2263f8bfcf4
+//https://akhiilgupta.medium.com/design-a-multi-threaded-task-scheduler-lld-multi-threaded-construct-eb090c5a8727
 public interface ExecutionContext {
 
     void execute();
