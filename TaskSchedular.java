@@ -75,18 +75,17 @@ public class RecurringTask extends ScheduledTask {
     }
 }
 
-public interface TaskStore<T extends ScheduledTask> {
-
-    T peek();
-
-    T poll();
-
-    void add(T task);
-
-    boolean remove(T task);
-
-    boolean isEmpty();
-}
+public interface TaskStore {  
+    ScheduledTask peek();  
+  
+    ScheduledTask poll();  
+  
+    void add(ScheduledTask task);  
+  
+    boolean remove(ScheduledTask task);  
+  
+    boolean isEmpty();  
+}  
 
 public class PriorityBlockingQueueTaskStore implements TaskStore<ScheduledTask> {
 
