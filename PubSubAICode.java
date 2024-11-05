@@ -55,6 +55,15 @@ class MessageBroker {
     private final ExecutorService executorService = Executors.newCachedThreadPool();  
   
     public void subscribe(String topic, Subscriber subscriber) {  
+
+      /*
+      List<Subscriber> subscriberList = subscribers.get(topic);  
+      if (subscriberList == null) {  
+          subscriberList = new ArrayList<>();  
+          subscribers.put(topic, subscriberList);  
+      }  
+      subscriberList.add(subscriber);  
+      */
         subscribers.computeIfAbsent(topic, k -> new ArrayList<>()).add(subscriber);  
     }  
   
@@ -62,6 +71,13 @@ class MessageBroker {
         List<Subscriber> topicSubscribers = subscribers.get(topic);  
         if (topicSubscribers != null) {  
             for (Subscriber subscriber : topicSubscribers) {  
+              // lambda is same as this
+              //executorService.submit(new Runnable() {  
+              //@Override  
+              //public void run() {  
+              //subscriber.receive(message);  
+              //}  
+              //});  
                 executorService.submit(() -> subscriber.receive(message));  
             }  
         }  
