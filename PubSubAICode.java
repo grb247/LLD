@@ -1,3 +1,4 @@
+//A news application where multiple news agencies (publishers) publish news articles (messages) to various topics (e.g., "sports", "technology", "politics"). Users (subscribers) can subscribe to their interested topics and receive real-time updates.
 import java.util.*;  
 import java.util.concurrent.ConcurrentHashMap;  
 import java.util.concurrent.ExecutorService;  
