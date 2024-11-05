@@ -1,4 +1,5 @@
 //https://github.com/ashishps1/awesome-low-level-design/tree/main/solutions/java/src/pubsubsystem
+//A news application where multiple news agencies (publishers) publish news articles (messages) to various topics (e.g., "sports", "technology", "politics"). Users (subscribers) can subscribe to their interested topics and receive real-time updates.
 interface Subscriber {
     void onMessage(Message message);
 }
